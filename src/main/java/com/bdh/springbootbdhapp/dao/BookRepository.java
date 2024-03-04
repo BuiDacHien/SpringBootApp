@@ -7,8 +7,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
-@CrossOrigin("http://localhost:3000")
-@RequestMapping("/api/books")
 public interface BookRepository extends JpaRepository<Book, Long> {
     Page<Book> findByTitleContaining(@RequestParam("title") String title,  Pageable pageable);
 
